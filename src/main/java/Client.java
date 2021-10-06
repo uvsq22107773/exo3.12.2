@@ -10,8 +10,12 @@ public class Client {
         this.serveur = s;
     }
     boolean seConnecter(){
-        System.out.println("\n"+this.nom+" Connnecting to serverur..");
-        System.out.println(this.serveur.connecter(this));
+        try {
+            System.out.println("\n"+this.nom+" Connnecting to serverur..");
+            System.out.println(this.serveur.connecter(this));
+        }catch (Exception e){
+            return false;
+        }
         return true;
     }
     void envoyer(String msg){

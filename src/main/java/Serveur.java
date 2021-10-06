@@ -8,8 +8,12 @@ public class Serveur {
 
     }
     boolean connecter (Client cl){
-        System.out.println(cl.nom+" Connected to server..");
-        refs.add(cl);
+        try {
+            System.out.println(cl.nom+" Connected to server..");
+            refs.add(cl);
+        }catch (Exception e){
+            return false;
+        }
         return true;
     }
     void diffuser(String message){
